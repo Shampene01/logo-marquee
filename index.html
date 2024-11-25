@@ -21,19 +21,33 @@
 
         .logo-scroll {
             display: flex;
-            white-space: nowrap;
-            animation: marquee 30s linear infinite;
-            will-change: transform;
+            position: absolute;
+            animation: scroll 40s linear infinite;
+        }
+
+        .logo-set {
+            display: flex;
+            gap: 48px;
+            padding: 0 24px;
         }
 
         .logo-item {
             flex-shrink: 0;
-            margin: 0 24px;
             width: 140px;
             height: 80px;
+        }
+
+        .logo-link {
             display: flex;
             align-items: center;
             justify-content: center;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-link:hover {
+            transform: scale(1.1);
         }
 
         .logo-item img {
@@ -44,21 +58,27 @@
             backface-visibility: hidden;
         }
 
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
         }
 
         .logo-scroll:hover {
             animation-play-state: paused;
-            transition: all 0.3s ease;
         }
 
         @media (max-width: 768px) {
             .logo-item {
-                margin: 0 16px;
                 width: 120px;
                 height: 70px;
+            }
+            .logo-set {
+                gap: 32px;
+                padding: 0 16px;
             }
         }
     </style>
@@ -67,49 +87,81 @@
     <div class="logo-container">
         <div class="logo-scroll">
             <!-- First set of logos -->
-            <div class="logo-item">
-                <img src="https://static.wixstatic.com/media/e78727_13f1864fba1b42bc8ec4a03eb9faa147~mv2.png" alt="Sanlam">
-            </div>
-            <div class="logo-item">
-                <img src="https://static.wixstatic.com/media/e78727_9d9de5f1e7ad4d968df2d98397465c84~mv2.png" alt="Old Mutual">
-            </div>
-            <div class="logo-item">
-                <img src="https://static.wixstatic.com/media/e78727_5bf7732f849b4d34a1069ca694e65040~mv2.png" alt="Momentum">
-            </div>
-            <div class="logo-item">
-                <img src="https://static.wixstatic.com/media/e78727_af9f03901ea54ac9ba1da6b06a720ad0~mv2.png" alt="Metropolitan">
-            </div>
-            <div class="logo-item">
-                <img src="https://static.wixstatic.com/media/e78727_cf50a4f811a64679b5706ab4ed38613b~mv2.jpg" alt="Discovery">
-            </div>
-            <div class="logo-item">
-                <img src="https://static.wixstatic.com/media/e78727_5dc5964578b246719386bbf4d2b52998~mv2.png" alt="RMA">
-            </div>
-            <div class="logo-item">
-                <img src="https://static.wixstatic.com/media/e78727_54807ef9f9154975a91b6defb529f62d~mv2.webp" alt="1Life">
+            <div class="logo-set">
+                <div class="logo-item">
+                    <a href="https://www.sanlam.co.za" target="_blank" class="logo-link">
+                        <img src="https://static.wixstatic.com/media/e78727_13f1864fba1b42bc8ec4a03eb9faa147~mv2.png" alt="Sanlam">
+                    </a>
+                </div>
+                <div class="logo-item">
+                    <a href="https://www.oldmutual.co.za" target="_blank" class="logo-link">
+                        <img src="https://static.wixstatic.com/media/e78727_9d9de5f1e7ad4d968df2d98397465c84~mv2.png" alt="Old Mutual">
+                    </a>
+                </div>
+                <div class="logo-item">
+                    <a href="https://www.momentum.co.za" target="_blank" class="logo-link">
+                        <img src="https://static.wixstatic.com/media/e78727_5bf7732f849b4d34a1069ca694e65040~mv2.png" alt="Momentum">
+                    </a>
+                </div>
+                <div class="logo-item">
+                    <a href="https://www.metropolitan.co.za" target="_blank" class="logo-link">
+                        <img src="https://static.wixstatic.com/media/e78727_af9f03901ea54ac9ba1da6b06a720ad0~mv2.png" alt="Metropolitan">
+                    </a>
+                </div>
+                <div class="logo-item">
+                    <a href="https://www.discovery.co.za" target="_blank" class="logo-link">
+                        <img src="https://static.wixstatic.com/media/e78727_cf50a4f811a64679b5706ab4ed38613b~mv2.jpg" alt="Discovery">
+                    </a>
+                </div>
+                <div class="logo-item">
+                    <a href="https://www.rma.co.za" target="_blank" class="logo-link">
+                        <img src="https://static.wixstatic.com/media/e78727_5dc5964578b246719386bbf4d2b52998~mv2.png" alt="RMA">
+                    </a>
+                </div>
+                <div class="logo-item">
+                    <a href="https://www.1life.co.za" target="_blank" class="logo-link">
+                        <img src="https://static.wixstatic.com/media/e78727_54807ef9f9154975a91b6defb529f62d~mv2.webp" alt="1Life">
+                    </a>
+                </div>
             </div>
             
-            <!-- Duplicate set of logos for continuous scroll -->
-            <div class="logo-item">
-                <img src="https://static.wixstatic.com/media/e78727_13f1864fba1b42bc8ec4a03eb9faa147~mv2.png" alt="Sanlam">
-            </div>
-            <div class="logo-item">
-                <img src="https://static.wixstatic.com/media/e78727_9d9de5f1e7ad4d968df2d98397465c84~mv2.png" alt="Old Mutual">
-            </div>
-            <div class="logo-item">
-                <img src="https://static.wixstatic.com/media/e78727_5bf7732f849b4d34a1069ca694e65040~mv2.png" alt="Momentum">
-            </div>
-            <div class="logo-item">
-                <img src="https://static.wixstatic.com/media/e78727_af9f03901ea54ac9ba1da6b06a720ad0~mv2.png" alt="Metropolitan">
-            </div>
-            <div class="logo-item">
-                <img src="https://static.wixstatic.com/media/e78727_cf50a4f811a64679b5706ab4ed38613b~mv2.jpg" alt="Discovery">
-            </div>
-            <div class="logo-item">
-                <img src="https://static.wixstatic.com/media/e78727_5dc5964578b246719386bbf4d2b52998~mv2.png" alt="RMA">
-            </div>
-            <div class="logo-item">
-                <img src="https://static.wixstatic.com/media/e78727_54807ef9f9154975a91b6defb529f62d~mv2.webp" alt="1Life">
+            <!-- Second set of logos (exact duplicate) -->
+            <div class="logo-set">
+                <div class="logo-item">
+                    <a href="https://www.sanlam.co.za" target="_blank" class="logo-link">
+                        <img src="https://static.wixstatic.com/media/e78727_13f1864fba1b42bc8ec4a03eb9faa147~mv2.png" alt="Sanlam">
+                    </a>
+                </div>
+                <div class="logo-item">
+                    <a href="https://www.oldmutual.co.za" target="_blank" class="logo-link">
+                        <img src="https://static.wixstatic.com/media/e78727_9d9de5f1e7ad4d968df2d98397465c84~mv2.png" alt="Old Mutual">
+                    </a>
+                </div>
+                <div class="logo-item">
+                    <a href="https://www.momentum.co.za" target="_blank" class="logo-link">
+                        <img src="https://static.wixstatic.com/media/e78727_5bf7732f849b4d34a1069ca694e65040~mv2.png" alt="Momentum">
+                    </a>
+                </div>
+                <div class="logo-item">
+                    <a href="https://www.metropolitan.co.za" target="_blank" class="logo-link">
+                        <img src="https://static.wixstatic.com/media/e78727_af9f03901ea54ac9ba1da6b06a720ad0~mv2.png" alt="Metropolitan">
+                    </a>
+                </div>
+                <div class="logo-item">
+                    <a href="https://www.discovery.co.za" target="_blank" class="logo-link">
+                        <img src="https://static.wixstatic.com/media/e78727_cf50a4f811a64679b5706ab4ed38613b~mv2.jpg" alt="Discovery">
+                    </a>
+                </div>
+                <div class="logo-item">
+                    <a href="https://www.rma.co.za" target="_blank" class="logo-link">
+                        <img src="https://static.wixstatic.com/media/e78727_5dc5964578b246719386bbf4d2b52998~mv2.png" alt="RMA">
+                    </a>
+                </div>
+                <div class="logo-item">
+                    <a href="https://www.1life.co.za" target="_blank" class="logo-link">
+                        <img src="https://static.wixstatic.com/media/e78727_54807ef9f9154975a91b6defb529f62d~mv2.webp" alt="1Life">
+                    </a>
+                </div>
             </div>
         </div>
     </div>
